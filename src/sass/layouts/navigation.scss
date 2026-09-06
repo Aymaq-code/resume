@@ -1,0 +1,415 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+
+// Navigation Styles
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  // background: transparent;
+
+  &--scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+
+    navigation__brand-text {
+      h2 {
+        color: variables.$color-text-primary;
+      }
+      span {
+        color: variables.$color-templage-1;
+      }
+    }
+
+    .navigation__link {
+      color: variables.$color-text-secondary;
+    }
+
+    .navigation__toggle {
+      color: variables.$color-text-primary;
+    }
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // Desktop Links
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 0.8rem 1.6rem;
+    color: variables.$color-text-dark;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-family: "VariableFont", sans-serif;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        variables.$color-templage-1,
+        variables.$colr-template-3
+      );
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+      color: white;
+
+      &::before {
+        width: 80%;
+      }
+    }
+
+    &--active {
+      color: variables.$color-templage-1 !important;
+      font-weight: 600;
+
+      &::before {
+        width: 80%;
+      }
+    }
+  }
+
+  &__cta {
+    background: linear-gradient(
+      135deg,
+      variables.$color-templage-1,
+      variables.$colr-template-2
+    );
+    color: white !important;
+    padding: 0.8rem 2.4rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(variables.$color-templage-1, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-family: "VariableFont", sans-serif;
+
+    &::before {
+      display: none !important;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(variables.$color-templage-1, 0.4);
+      color: white !important;
+      background: linear-gradient(
+        135deg,
+        color.adjust(variables.$color-templage-1, $lightness: -10%),
+        color.adjust(variables.$colr-template-2, $lightness: -10%)
+      );
+    }
+  }
+
+  // Toggle Button
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &:focus {
+      outline: 2px solid variables.$color-templage-1;
+      outline-offset: 2px;
+    }
+  }
+
+  // Overlay
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // Mobile Navigation
+  &__mobile {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 380px;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    z-index: 1001;
+    padding: 8rem 3rem 3rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+
+    &--active {
+      right: 0;
+    }
+  }
+
+  &__mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  &__mobile-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-family: "VariableFont", sans-serif;
+    padding: 0.8rem 0;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        variables.$color-templage-1,
+        variables.$colr-template-3
+      );
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: white;
+      transform: translateX(10px);
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &--active {
+      color: variables.$color-templage-1 !important;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__mobile-cta {
+    background: linear-gradient(
+      135deg,
+      variables.$color-templage-1,
+      variables.$colr-template-2
+    );
+    color: white !important;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(variables.$color-templage-1, 0.3);
+    font-family: "VariableFont", sans-serif;
+    margin-top: 1rem;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(variables.$color-templage-1, 0.4);
+      background: linear-gradient(
+        135deg,
+        color.adjust(variables.$color-templage-1, $lightness: -10%),
+        color.adjust(variables.$colr-template-2, $lightness: -10%)
+      );
+    }
+  }
+
+  // ======================
+  // RESPONSIVE STYLES
+  // ======================
+
+  @include respond(tab-port) {
+    padding: 1.2rem 0;
+
+    &--scrolled {
+      padding: 0.8rem 0;
+    }
+
+    &__container {
+      padding: 0 1.5rem;
+    }
+
+    &__links {
+      display: none;
+    }
+
+    &__toggle {
+      display: flex;
+    }
+
+    &__brand-text {
+      h2 {
+        font-size: 1.8rem;
+      }
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    &__logo-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.8rem;
+    }
+  }
+
+  @include respond(phone) {
+    padding: 1rem 0;
+
+    &--scrolled {
+      padding: 0.6rem 0;
+    }
+
+    &__container {
+      padding: 0 1.5rem;
+    }
+
+    &__brand {
+      gap: 1rem;
+    }
+
+    &__logo-icon {
+      width: 35px;
+      height: 35px;
+      font-size: 1.5rem;
+    }
+
+    &__brand-text {
+      h2 {
+        font-size: 1.5rem;
+      }
+      span {
+        font-size: 0.9rem;
+      }
+    }
+
+    &__toggle {
+      font-size: 2.4rem;
+      width: 40px;
+      height: 40px;
+    }
+
+    &__mobile {
+      padding: 7rem 2rem 2rem;
+      max-width: 320px;
+    }
+
+    &__mobile-link {
+      font-size: 2rem;
+    }
+
+    &__mobile-cta {
+      font-size: 1.6rem;
+      padding: 1rem 2.5rem;
+    }
+  }
+
+  @include respond(smallPhone) {
+    &__brand-text {
+      h2 {
+        font-size: 1.2rem;
+      }
+      span {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__logo-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 1.2rem;
+    }
+
+    &__mobile {
+      max-width: 280px;
+      padding: 6rem 1.5rem 1.5rem;
+    }
+
+    &__mobile-link {
+      font-size: 1.8rem;
+    }
+  }
+}

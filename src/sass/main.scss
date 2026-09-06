@@ -1,0 +1,24 @@
+// Abstracts
+@use "./abstracts/variables";
+@use "./abstracts/mixins";
+@use "./abstracts/base";
+@use "./abstracts/animations.scss";
+
+// Layouts
+@use "./layouts/container.scss";
+@use "./layouts/navigation.scss";
+@use "./layouts/footer.scss";
+
+// Components
+@use "./components/logo.scss";
+
+// Messages
+@use "./messages/errorMsg.scss";
+@use "./messages/successMsg.scss";
+
+//Pages
+@use "./pages/homePage.scss";
+@use "./pages/resumePage.scss";
+@use "./pages/projectsPage.scss";
+@use "./pages/contactPages.scss";
+@use "./pages/notFoundPage.scss";

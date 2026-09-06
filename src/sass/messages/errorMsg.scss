@@ -1,0 +1,51 @@
+@use "../abstracts/variables";
+
+.errorMsg {
+  //border: 2px solid blue;
+  font-family: "VariableFont";
+  color: variables.$color-text-light;
+  letter-spacing: 1.5px;
+
+  max-width: 45rem;
+  margin: 13rem auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 1px rgba(variables.$color-text-secondary, 0.5);
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    background-color: rgba(variables.$colr-template-3, 0.95);
+    padding: 6rem 0;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 10rem;
+    }
+  }
+
+  &__bottom {
+    p {
+      background-color: rgba(variables.$color-text-secondary, 0.7);
+      font-size: 2rem;
+      line-height: 25px;
+      padding: 3rem 1.3rem;
+    }
+  }
+
+  a {
+    all: unset;
+    width: 100%;
+    background-color: variables.$color-templage-1;
+    font-size: 2.3rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(variables.$color-templage-1, 0.6);
+    }
+  }
+}

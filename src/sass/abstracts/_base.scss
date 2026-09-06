@@ -1,0 +1,144 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+@font-face {
+  font-family: "EagleLake";
+  src: url("/src/assets/fonts/EagleLake-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OriginalSurfer";
+  src: url("/src/assets/fonts/OriginalSurfer-Regular.ttf");
+}
+
+@font-face {
+  font-family: "VariableFont";
+  src: url("/src/assets/fonts/VariableFont_wght.ttf");
+}
+
+h1 {
+  color: variables.$color-text-primary;
+}
+h2 {
+  color: variables.$color-text-secondary;
+}
+p {
+  color: variables.$color-text-dark;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include mixins.respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+  }
+
+  @include mixins.respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include mixins.respond(big-desktop) {
+    font-size: 75%; //1rem = 12px, 12/16 = 75%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1.7;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: variables.$color-bg-secondary-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+// Improve focus states for accessibility
+*:focus-visible {
+  outline: 2px solid variables.$color-templage-1;
+  outline-offset: 2px;
+}
+
+// Smooth transitions for all interactive elements
+a,
+button,
+.navigation__toggleBtn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active {
+  color: variables.$color-templage-1 !important;
+}
+
+::selection {
+  background-color: variables.$color-templage-1;
+  color: variables.$color-text-light;
+}
+
+::-moz-selection {
+  background-color: variables.$colr-template-3;
+  color: variables.$color-templage-1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  color: wheat !important;
+  background-color: red;
+}
+
+::-webkit-scrollbar-track {
+  background-color: variables.$color-text-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: variables.$color-templage-1;
+  border-radius: 4px;
+
+  &:hover {
+    background: variables.$colr-template-2;
+  }
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// responsive images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+// Container utility
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include mixins.respond(phone) {
+    padding: 0 1.5rem;
+  }
+}
