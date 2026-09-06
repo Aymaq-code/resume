@@ -2,6 +2,7 @@ import Navigation from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import TechStack from "../components/pages/home/TechStack";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+import SkillsBoard from "../components/pages/home/SkillsBoard";
 
 export default function HomePage() {
   useScrollAnimation();
@@ -30,6 +31,8 @@ export default function HomePage() {
             {/* Right Side - Content */}
             <TechStack />
           </div>
+          {/* Skills Section */}
+          <SkillsBoard />
         </div>
       </section>
 
