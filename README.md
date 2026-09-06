@@ -28,10 +28,10 @@ This is a personal portfolio project, but suggestions and improvements are welco
 📞 Contact
 Feel free to reach out for questions or collaboration opportunities!
 
-Email: [rashidaymaq1994@gmail.com]
+Email: [rashidaymaq1994@gmail.com](mailto:rashidaymaq1994@gmail.com)
 
-LinkedIn: [https://www.linkedin.com/in/abdul-rashid-aymaq-3854a435a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app]
+LinkedIn: [Abdul Rashid Aymaq](https://www.linkedin.com/in/abdul-rashid-aymaq-3854a435/)
 
-Portfolio: [https://aymaq-code.github.io/resume/]
+Portfolio: [Live Demo](https://aymaq-code.github.io/resume/)
 
 ![Screenshot](src/assets/images/resumm.png)
