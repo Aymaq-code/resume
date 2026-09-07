@@ -20,9 +20,43 @@
       ],
       "live": "https://easy-land-dashboard.vercel.app/"
     },
-
     {
       "id": 2,
+      "name": "Wild Nest",
+      "discription": "Wild Nest is a full-stack cabin booking platform built with Next.js 16, React 19, and NextAuth.js. Users can browse available cabins, view details, make reservations, and manage their bookings through a modern, responsive interface.",
+      "image": "https://i.postimg.cc/Wpm3DgPj/home-lg.png",
+      "technologies": [
+        "⚡ Next.js 16 App Router",
+        "⚛️ React 19",
+        "🧩 Server Components",
+        "⚙️ Server Actions",
+        "🛡️ Middleware",
+        "⏳ Suspense",
+        "🔄 Revalidation",
+        "🌐 Mock API",
+        "🔐 NextAuth.js"
+      ],
+      "live": "https://wild-nest-six.vercel.app/"
+    },
+    {
+      "id": 3,
+      "name": "Portfolio",
+      "discription": "A modern, responsive portfolio website built with React and Vite to showcase my skills, projects, and professional experience. Features smooth animations, clean design, and an organized structure for optimal user experience.",
+      "image": "https://i.postimg.cc/pTDSZ22p/localhost-resume.png",
+      "technologies": [
+        "⚛️ React 19",
+        "⚡ Vite",
+        "🧭 React Router DOM v9",
+        "🎯 React Icons and Font Awesome",
+        "🎨 SCSS",
+        "🕸️ Animations",
+        "🧩 Context API"
+      ],
+      "live": "https://aymaq-code.github.io/resume/"
+    },
+
+    {
+      "id": 4,
       "name": "coffee app",
       "discription": "Kabul Coffee is designed to provide a seamless user experience for coffee lovers. Users can explore a wide variety of coffee menus, reserve tables online through an easy booking system, learn about the café, its team, and awards, read the latest blog articles, and contact the café easily via the contact form or social media links. The design emphasizes responsive layouts, professional typography, and visually appealing imagery to create a cozy and welcoming vibe.",
       "image": "https://i.postimg.cc/vDRPD8Zt/homePage.png",
@@ -38,7 +72,7 @@
       "live": "https://aymaq-code.github.io/coffee-app/"
     },
     {
-      "id": 3,
+      "id": 5,
       "name": "Personal Portfolio",
       "discription": "Welcome to my portfolio application! This is a modern, responsive portfolio built with React and Vite, showcasing my skills, projects, and experience as a web developer.",
       "image": "https://i.postimg.cc/2SJg6Ngp/resume-project-img.png",
@@ -56,7 +90,7 @@
       "live": "https://aymaq-code.github.io/portfolio/"
     },
     {
-      "id": 4,
+      "id": 6,
       "name": "to-do list app",
       "discription": "A stylish and interactive to-do list application built with React. Add, search, and delete tasks with a clean, responsive UI and real-time text highlighting.",
       "image": "https://i.postimg.cc/6qBvHkmj/todo-app.png",
@@ -69,7 +103,7 @@
       "live": "https://aymaq-code.github.io/To-do-List/"
     },
     {
-      "id": 5,
+      "id": 7,
       "name": "stationery store app",
       "discription": "The Stationery Store Website is a modern and responsive e-commerce front-end project designed to showcase and sell premium stationery items. Built with HTML, CSS, SASS, and JavaScript, the website delivers a smooth shopping experience with an elegant layout and interactive features.",
       "image": "https://i.postimg.cc/RZ2cBpqw/stationary-app.png",
@@ -82,7 +116,7 @@
       "live": "https://aymaq-code.github.io/stationary/"
     },
     {
-      "id": 6,
+      "id": 8,
       "name": "weather app",
       "image": "https://i.postimg.cc/L4vLX8n9/weather-app.png",
       "technologies": [
@@ -96,7 +130,7 @@
     },
 
     {
-      "id": 7,
+      "id": 9,
       "name": "lightweight web animation",
       "discription": "Many developers rely on heavy animation libraries (like AOS -Animate On Scroll) that can add up to 330KB to your bundle size,even when you only need 1-2 animation effects. This cansignificantly impact your website's loading time and performance.",
       "image": "https://i.postimg.cc/XJzYtqVL/Light-Animation-app.png",
