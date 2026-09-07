@@ -34,4 +34,4 @@ LinkedIn: [Abdul Rashid Aymaq](https://www.linkedin.com/in/abdul-rashid-aymaq-38
 
 Portfolio: [Live Demo](https://aymaq-code.github.io/resume/)
 
-![Screenshot](src/assets/images/resumm.png)
+![Screenshot](src/assets/images/home.png)

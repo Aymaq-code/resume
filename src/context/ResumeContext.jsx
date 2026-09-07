@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 
-const BASE_URL = "/my-resume/data.json";
+const BASE_URL = "/resume/data.json";
 
 const ResumeContext = createContext();
 
